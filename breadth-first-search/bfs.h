@@ -1,5 +1,5 @@
 /*
-	This header defines breadth first search
+	This header implementes breadth first search using adjacency list representation of a graph.
 */
 
 #ifndef __BFS_BFS__
@@ -58,7 +58,7 @@ class Bfs{
 		void printAllPaths();
 
 
-		// Deallocate vertices
+		// Deallocates vertices
 		// Time Complexity: O(V)     V - no. of vertices
 
 

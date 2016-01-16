@@ -155,7 +155,7 @@ void Bfs::printPath(int u){
 } 	
 
 
-// Deallocate vertices
+// Deallocates vertices
 // Time Complexity: O(V)     V - no. of vertices
 
 void Bfs::deallocateVertices(){
