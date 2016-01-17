@@ -41,8 +41,7 @@ void testBfs(){
 	bfs.printAllPaths();
 
 
-	// deallocate vertices
-	bfs.deallocateVertices();
+	
 }
 
 
