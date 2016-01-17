@@ -61,8 +61,7 @@ class Bfs{
 		// Deallocates vertices
 		// Time Complexity: O(V)     V - no. of vertices
 
-
-		void deallocateVertices();
+		~Bfs();
 
 };
 

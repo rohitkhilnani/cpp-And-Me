@@ -158,7 +158,7 @@ void Bfs::printPath(int u){
 // Deallocates vertices
 // Time Complexity: O(V)     V - no. of vertices
 
-void Bfs::deallocateVertices(){
+	Bfs::~Bfs(){
 
 	for(int i=1;i<=v.size();i++){
 		delete v[i];
