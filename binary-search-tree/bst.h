@@ -38,6 +38,18 @@ class Bst{
 		void postOrderVisit(Node *n);
 
 
+		// Deletes key k from tree rooted at n
+		// Returns n (root of the subtree)
+
+		Node* deleteKey(Node* n, int key);
+
+		
+		// Returns pointer to inorder successor of node n if exists
+
+		Node* findSucc(Node *n);
+
+
+
 	public:	
 
 		// Inserts new node with specified value in the tree
@@ -73,6 +85,14 @@ class Bst{
 		// Destructor - deallocates tree
 
 		~Bst();
+
+
+		// Deletes key k from tree 
+
+		void deleteKey(int key);
+
+
+
 
 };
 

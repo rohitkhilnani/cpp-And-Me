@@ -201,3 +201,118 @@
 			// deallocate tree rooted at root
 			deallocate(root);
 		}
+
+
+		// Deletes key k from tree rooted at n
+		// Returns n (root of the subtree)
+
+		Node* Bst::deleteKey(Node* n, int key){
+
+			// if n is null, dont do anything
+			if(n == nullptr);
+				//do nothing
+			else	
+			// if key is smaller than value at n
+			if(key < n->getValue()){
+
+				// delete in left subtree of n
+
+				n->setLeft(deleteKey(n->getLeft(), key));
+			}
+
+			// if key is greater than value of n
+			else if (key > n->getValue()){
+
+				// delete in right subtree of n
+				n->setRight(deleteKey(n->getRight(), key));
+			}
+			
+			else{  // if n is the node to be deleted (key matches value at n)
+
+				// if left subtree of n is null
+				if(n->getLeft() == nullptr){
+
+					// if right subtree is also null
+					if(n->getRight() == nullptr){
+
+						// delete n and set it as null
+						delete n;
+						n = nullptr;
+					}
+
+					else {  // if right subtree is not null
+
+						// delete n and point n to right subtree
+
+						Node* temp = n->getRight();
+						delete n;
+						n = temp;
+
+					}
+
+				}	
+
+				// if right subtree is null and left subtree is not null
+				else if(n->getRight() == nullptr) {   
+
+					// delete n and point it to left subtree
+
+					Node* temp = n->getLeft();
+					delete n;
+					n = temp;
+
+				}
+
+				else {  // if both subtrees are not null
+
+					// find inorder successor
+
+					Node* succ = findSucc(n);
+
+					// copy contents from succ to n
+					n->setValue(succ->getValue());
+
+					//delete succ in right subtree
+
+					n->setRight(deleteKey(n->getRight(), succ->getValue()));	
+
+				}
+
+
+			}
+
+			// return n
+			return n;
+			
+		}
+
+	// Returns pointer to inorder successor of node n if exists
+
+	Node* Bst::findSucc(Node *n){
+
+		if(n==nullptr || n->getRight()==nullptr)
+			return nullptr;
+		else{
+
+			// move right once
+			n = n->getRight();
+
+			// move left till possible
+
+			while(n->getLeft()!=nullptr)
+				n = n->getLeft();
+
+		}
+
+		return n;
+		
+		
+	}
+
+	// Deletes key k from tree 
+
+	void Bst::deleteKey(int key){
+
+		root = deleteKey(root, key);
+	}
+
