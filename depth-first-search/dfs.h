@@ -58,6 +58,11 @@ class Dfs{
 		// Time Complexity O(V)		V - no. of vertices
 		void topologicalSort();
 
+
+		// Deallocate Vertices
+		//Time Complexity: O(V) 	V - no. of vertices
+		~Dfs();
+
 };	
 
 #endif
