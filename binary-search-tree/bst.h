@@ -68,6 +68,15 @@ class Bst{
 		Node* findSucc(Node *n);
 
 
+		// Finds specified key in tree rooted at specified node n and returns pointer to its node
+		// Otherwise, returns nullptr
+		// Time Complexity: 
+		//		Worst Case: O(N) 			N - no. of nodes in tree
+		//		Average Case: O(log(N)) 
+		// Space Complexity: O(N)	(May improve if tail recursion is optimized)
+
+		Node* find(Node* n, int key);
+
 
 	public:	
 
@@ -117,8 +126,11 @@ class Bst{
 		void deleteKey(int key);
 
 
+		// Finds key in tree and returns pointer to its node if it exists.
+		// Otherwise returns null
 
-
+		Node* find(int key);
+	
 };
 
 

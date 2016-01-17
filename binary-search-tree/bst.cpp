@@ -339,3 +339,31 @@
 		root = deleteKey(root, key);
 	}
 
+	// Finds specified key in tree rooted at specified node n and returns pointer to its node
+	// Otherwise, returns nullptr
+	// Time Complexity: 
+	//		Worst Case: O(N) 			N - no. of nodes in tree
+	//		Average Case: O(log(N)) 
+	// Space Complexity: O(N)	(May improve if tail recursion is optimized)
+
+	Node* Bst::find(Node* n, int key){
+
+		// Return null if tree is empty
+		if(n == nullptr)
+			return nullptr;
+
+		//if key is same as value at n, return n
+		if(key == n->getValue())
+			return n;
+		else if(key < n->getValue()) 				// if key is smaller than value at n
+			return find(n->getLeft(), key); 		// find in left subtree of n
+		else return find(n->getRight(), key); 		// else find in right subtree of n
+	}
+
+	// Finds key in tree and returns pointer to its node if it exists.
+	// Otherwise returns null
+
+	Node* Bst::find(int key){
+
+		return find(root, key);
+	}
