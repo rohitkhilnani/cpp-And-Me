@@ -19,32 +19,51 @@ class Bst{
 	
 		// Inserts new node with specified value at sub-tree rooted at n. 
 		// Returns root.
+		// Time Complexity: 
+		//		Worst Case: O(N) 			N - no. of nodes in tree
+		//		Average Case: O(log(N)) 
+		// Space Complexity: O(N)	
 
 		Node* insert(Node* n, int value);
 
 
 		// Visits Node in in order fashion
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
 
 		void inOrderVisit(Node *n);
 
 
 		// Visits Node in pre order fashion
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
+
 
 		void preOrderVisit(Node *n);
 
 
 		// Visits Node in post order fashion	
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
+
 
 		void postOrderVisit(Node *n);
 
 
 		// Deletes key k from tree rooted at n
 		// Returns n (root of the subtree)
+		// Time Complexity: 
+		//		Worst Case: O(N) 			N - no. of nodes in tree
+		//		Average Case: O(log(N)) 
+		// Space Complexity: O(N)	
 
 		Node* deleteKey(Node* n, int key);
 
 		
 		// Returns pointer to inorder successor of node n if exists
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
+
 
 		Node* findSucc(Node *n);
 
@@ -73,11 +92,17 @@ class Bst{
 
 
 		// Level order traversal of tree
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
+
 
 		void levelOrder();
 
 
 		// Deallocates tree rooted at n
+		// Time Complexity: O(N) 
+		// Space Complexity: O(N)		
+
 
 		void deallocate(Node *n);
 
