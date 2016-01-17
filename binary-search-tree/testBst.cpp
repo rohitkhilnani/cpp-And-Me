@@ -111,13 +111,62 @@ void testInsert(){
 
 	}
 
+// tests find
+
+	void testFind(){
+
+		std::cout<<"Testing Find:\n";	
+
+		// define values
+
+		std::vector<int> values = {50,30,70,10,40,60,90,5,15,35,55,95,100,51};
+
+		// create bst
+
+		Bst bst;
+
+		// search in empty tree
+		std::cout<<"19 exists?: ";
+		if(bst.find(19)!=nullptr)
+			std::cout<<"Yes\n";
+		else
+			std::cout<<"No\n";
+
+
+		// insert values
+
+		for(int i=0;i<values.size();i++)
+			bst.insert(values[i]);
+
+		
+		values.push_back(5000);
+		values.push_back(-50);
+		values.push_back(32);
+		values.push_back(96);
+
+		for(int i=0;i<values.size();i++){
+
+			std::cout<<values[i]<<" exists?: ";
+		if(bst.find(values[i])!=nullptr)
+			std::cout<<"Yes\n";
+		else
+			std::cout<<"No\n";
+
+
+		}
+
+	}	
+
 int main(){
 
 	// call testInsert
 	testInsert();
 
-	// call test Delete
+	// call testDelete
 	testDelete();
+
+	// call testFind
+	testFind();
 
 	return 0;
 }	
