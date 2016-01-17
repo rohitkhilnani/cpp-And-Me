@@ -1,8 +1,6 @@
-# Sorting Algorithms 
-
-Header sort defines several sorting algorithms on std::vector of int
+# Insertion Sort 
 
 Methods/ Operations implemented: 
 
-	void insertionSort(std::vector<int> &A) - Insertion Sort	
+	void insertionSort(std::vector<int> &A) 
 
