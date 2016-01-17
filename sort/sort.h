@@ -1,5 +1,5 @@
 /*
-	This header defines several sorting algorithms on std::vector of int
+	This header defines insertion sort for std::vector of int
 */
 
 #ifndef __SORT_SORT__
@@ -14,7 +14,6 @@
 // Stable	
 
 void insertionSort(std::vector<int> &A);
-
 
 
 #endif	

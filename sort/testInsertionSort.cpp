@@ -1,5 +1,5 @@
 /*
-	This program tests soring algorithms defined in sort.h
+	This program tests insertion sort
 */
 
 #include<iostream>
