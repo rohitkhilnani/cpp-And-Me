@@ -11,3 +11,5 @@ Methods/ Operations implemented:
 	bool isCyclic() - Returns true if graph is cyclic
 
 	void topologicalSort() - Prints topological sort order of vertices if graph is acyclic
+
+	Dfs::~Dfs() - Deallocate Vertices
