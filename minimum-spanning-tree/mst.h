@@ -75,8 +75,8 @@ class Mst{
 
 		void printMstEdges();
 
-		// Deallocates vertices
-
+		// Destructor - Deallocates vertices vertices and adjacency list
+		// Time complexity: O(V+E)	V - no. of Vertices, E - no. of edges
 		~Mst();
 
 };
