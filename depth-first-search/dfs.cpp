@@ -140,3 +140,14 @@
 		for(auto x: topologicalSorted)
 			std::cout<<x<<" ";
 	}
+
+
+	// Deallocate Vertices
+	//Time Complexity: O(V) 	V - no. of vertices
+	Dfs::~Dfs(){
+
+		for(int i=1;i<=v.size();i++){
+			delete v[i];
+		}
+
+	}
