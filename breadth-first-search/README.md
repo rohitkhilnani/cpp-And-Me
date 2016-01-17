@@ -14,4 +14,4 @@ Methods/ Operations implemented:
 
 	void printAllPaths() - Prints path of all vertices from source
 
-	void deallocateVertices() - Deallocates vertices
+	~Bfs() - Deallocates vertices
