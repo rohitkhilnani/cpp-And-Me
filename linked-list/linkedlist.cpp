@@ -165,4 +165,93 @@
 	}
 
 
+	// Reverses linked list
 
+	void LinkedList::reverse(){
+
+		// Dont do anything if list has less than two nodes
+		if(head == nullptr || head->getNext() == nullptr)
+			return;
+
+		// Obtain three pointers 
+		Node *prev = nullptr, *curr = head, *next = head->getNext();
+
+		// repeat while curr is not null
+		while(curr!=nullptr){
+
+			// point curr's next to prev
+			curr->setNext(prev);
+
+			// move prev to curr
+			prev = curr;
+
+			// move curr to next
+			curr = next;
+
+			// if next is not null, move next to its next 
+			if(next!=nullptr)
+				next = next->getNext();
+
+
+		}
+
+		// make prev new head
+		head = prev;
+
+	}
+
+
+	// (Pair-wise) reverses linked list
+
+	void LinkedList::pairwiseReverse(){
+
+		// if there are less than two nodes in linked list, 
+
+		// Dont do anything if list has less than two nodes
+		if(head == nullptr || head->getNext() == nullptr)
+			return;
+
+		// Obtain three pointers 
+		Node *prev = nullptr, *curr = head, *next = head->getNext();
+
+		// set next as new head
+		head = next;
+
+		// repeat while both curr and next are not null
+		while(curr!=nullptr && next!=nullptr){
+
+			// set curr's next to next's next
+			curr->setNext(next->getNext());
+
+			// set next's next to curr
+			next->setNext(curr);
+
+			// if prev is not null, set prev's next to next
+			if(prev!=nullptr){
+
+				prev->setNext(next);	
+			}
+
+
+			// move prev to curr
+			prev = curr;
+
+			// move curr to its next
+			curr = curr->getNext();
+
+			// if curr is not null, move next to curr's next
+			if(curr!=nullptr)
+				next = curr->getNext();
+
+		}
+
+
+
+
+
+
+
+
+
+
+	}

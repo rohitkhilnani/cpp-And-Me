@@ -55,7 +55,14 @@ class LinkedList{
 		void delete_node(int i);
 
 
+		// Reverses linked list
 
+		void reverse();
+
+
+		// (Pair-wise) reverses linked list
+
+		void pairwiseReverse();
 
 };
 
