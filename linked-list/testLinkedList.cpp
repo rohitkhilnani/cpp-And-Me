@@ -120,6 +120,125 @@ void testDelete(){
 
 }
 
+
+// tests reverse
+void testReverse(){
+
+	std::cout<<"Test Reverse\n";
+
+	// define vector of values
+	std::vector<int> values = {10,9,8,7,6,5,4,3,2,1};
+
+	// Create linked list
+	LinkedList ll;
+
+	for(auto x: values){
+
+		ll.insertFirst(x);
+	}	
+
+	ll.print();
+
+	ll.reverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.reverse();
+
+	ll.print();
+
+	for(int i=0;i<7;i++)
+		ll.delete_node(0);
+
+	ll.print();
+
+	ll.reverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.reverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.reverse();
+
+	ll.print();
+
+
+}
+
+
+// tests pairwiseReverse
+void testpairwiseReverse(){
+
+	std::cout<<"Test Pairwise Reverse\n";
+
+	// define vector of values
+	std::vector<int> values = {10,9,8,7,6,5,4,3,2,1};
+
+	// Create linked list
+	LinkedList ll;
+
+	for(auto x: values){
+
+		ll.insertFirst(x);
+	}	
+
+	ll.print();
+
+	ll.pairwiseReverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.pairwiseReverse();
+
+	ll.print();
+
+	for(int i=0;i<6;i++)
+		ll.delete_node(0);
+
+	ll.print();
+
+	ll.pairwiseReverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.pairwiseReverse();
+
+	ll.print();
+
+	ll.delete_node(0);
+
+	ll.print();
+
+	ll.pairwiseReverse();
+	
+	ll.print();
+
+
+}
+
+
 int main(){
 
 	// test insert
@@ -130,6 +249,12 @@ int main(){
 
 	// test delete
 	testDelete();
+
+	// test reverse
+	testReverse();
+
+	// test pairwise reverse
+	testpairwiseReverse();
 
 	return 0;
 }
