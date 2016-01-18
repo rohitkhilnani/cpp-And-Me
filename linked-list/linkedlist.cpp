@@ -119,7 +119,50 @@
 	}
 
 
+	// Deletes node at specified index i
 
+	void LinkedList::delete_node(int i){
+
+
+		// if list is empty, print underflow message
+		if(head == nullptr){
+			std::cout<<"List empty";
+			return;
+		}
+
+		// if index is invalid, print error message and return
+		if(i<0 || i>=length){
+
+			std::cout<<"invalid index "<<i<<std::endl;
+			return;
+		}
+
+
+		// Handle deletion at beginning
+		if(i == 0){
+
+			// Move head to next node
+			head = head->getNext();
+		}
+		else {  // Handle other cases
+
+			// get pointer to head
+			Node *ptr = head;
+
+			// move ptr ahead (i-1) times
+			for(int k = 0;k<(i-1);k++)
+				ptr = ptr->getNext();
+
+			// point ptr's next to ptr's next's next
+			ptr->setNext(ptr->getNext()->getNext());			
+
+
+		}
+
+		// reduce length by 1
+		length--;
+
+	}
 
 
 

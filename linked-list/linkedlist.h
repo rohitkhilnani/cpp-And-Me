@@ -47,9 +47,12 @@ class LinkedList{
 		// Returns value at specified location in linked list
 		// returns numeric_limits<int>::min if index is invalid
 
-
 		int valueAt(int i);
 
+
+		// Deletes node at specified index i
+
+		void delete_node(int i);
 
 
 
