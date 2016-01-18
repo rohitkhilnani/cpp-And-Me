@@ -38,6 +38,7 @@ void testInsert(){
 	// display linked list
 	ll.print();
 
+	ll.valueAt(-500);
 
 }
 
@@ -77,8 +78,47 @@ void testB(){
 
 	}
 
+	ll.valueAt(500);
+
 }
 
+
+// tests deletion
+
+void testDelete(){
+
+	std::cout<<"Test Delete\n";
+
+	// define vector of values
+	std::vector<int> values = {20,18,16,15,14,12,10,8,6,4,1,2,0};
+
+	// Create linked list
+	LinkedList ll;
+
+	for(auto x: values){
+
+		ll.insertFirst(x);
+	}	
+
+	ll.print();
+
+	std::cout<<"\nDelete index: 9\n";
+	ll.delete_node(9);
+	ll.print();
+
+	std::cout<<"\nDelete index : 2\n";
+	ll.delete_node(2);
+	ll.print();
+
+	std::cout<<"\nDelete index: 0\n";
+	ll.delete_node(0);
+	ll.print();
+
+	std::cout<<"\nDelete index: 9\n";
+	ll.delete_node(9);
+	ll.print();
+
+}
 
 int main(){
 
@@ -87,6 +127,9 @@ int main(){
 
 	// test B
 	testB();
+
+	// test delete
+	testDelete();
 
 	return 0;
 }
