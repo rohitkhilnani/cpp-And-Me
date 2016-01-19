@@ -93,6 +93,12 @@ class LinkedList{
 
 		void removeLoop(Node* loopnode);
 
+
+		// Finds length, assuming length is not available before hand
+
+		int findLength();
+
+
 };
 
 

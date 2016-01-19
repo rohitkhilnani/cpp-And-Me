@@ -441,3 +441,39 @@
 		// save is the last node. set its next to null
 		save->setNext(nullptr);
 	}
+
+	// Finds length, assuming length is not available before hand
+
+	int LinkedList::findLength(){
+
+		
+		// length is zero if list is empty
+		if(head == nullptr)
+			return 0;
+
+		// obtain pointer to head
+		Node *fast = head;
+
+		// length 
+		int len = 1;
+
+		// repeat while fast, fast's next and fast's next's next are not null
+		while(fast!=nullptr && fast->getNext()!=nullptr && fast->getNext()->getNext()!=nullptr){
+
+			// increase length by 2
+			len+=2;
+
+			// move fast ahead by 2
+			fast = fast->getNext()->getNext();
+
+		}
+
+		// check if one more node exists after fast. if yes, increment lenth by 1 
+		while(fast->getNext()!=nullptr){
+			
+			len++;
+			fast=fast->getNext();
+		}
+
+		return len;
+	}
