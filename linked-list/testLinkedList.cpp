@@ -345,6 +345,36 @@ void testRemoveLoop(){
 
 }
 
+
+// test find length
+
+void testFindLength(){
+
+	std::cout<<"Test Find length\n";
+
+	// define vector of values
+	std::vector<int> values = {9,8,7,6,5,4,3,2,1};
+
+	// create linked list
+	LinkedList ll;
+
+	std::cout<<"\nList: ";
+	ll.print();
+	std::cout<<"Length: "<<ll.findLength()<<"\n";
+
+	// insert values into linked list (always at beginning i.e. index 0)
+	for(auto x: values){
+		ll.insertFirst(x);
+		std::cout<<"\nList: ";
+		ll.print();
+		std::cout<<"Length: "<<ll.findLength()<<"\n";
+	}
+
+
+
+
+}
+
 int main(){
 
 	// test insert
@@ -367,6 +397,9 @@ int main(){
 
 	// test remove loop
 	testRemoveLoop();
+
+	// test find length
+	testFindLength();	
 
 	return 0;
 }
