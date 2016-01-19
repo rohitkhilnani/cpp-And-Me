@@ -375,6 +375,59 @@ void testFindLength(){
 
 }
 
+
+
+// test single swap kth
+
+void testSwapKth(LinkedList ll, int k){
+	std::cout<<"k = "<<k<<"\n";
+	std::cout<<"Before: ";
+	ll.print();
+	ll.swapKth(k);
+	std::cout<<"After: ";
+	ll.print();
+
+}
+
+
+
+// tests swapKth()
+
+void testSwapKth(){
+
+	std::cout<<"Test Swap Kth\n";
+
+	LinkedList ll;
+	testSwapKth(ll,2);
+
+	ll.insertLast(10);
+	testSwapKth(ll,1);
+
+	ll.insertLast(15);
+	testSwapKth(ll,1);
+	testSwapKth(ll,2);
+
+	ll.insertLast(20);
+	testSwapKth(ll,1);
+	testSwapKth(ll,2);
+	testSwapKth(ll,3);
+	testSwapKth(ll,4);
+
+	for(int i=25;i<=45;i+=5)
+		ll.insertLast(i);
+
+	testSwapKth(ll,1);
+	testSwapKth(ll,2);
+	testSwapKth(ll,4);
+	testSwapKth(ll,5);
+	testSwapKth(ll,8);
+
+}
+
+
+
+
+
 int main(){
 
 	// test insert
@@ -400,6 +453,8 @@ int main(){
 
 	// test find length
 	testFindLength();	
+
+	testSwapKth();
 
 	return 0;
 }
