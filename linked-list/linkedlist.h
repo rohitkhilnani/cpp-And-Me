@@ -86,6 +86,13 @@ class LinkedList{
 		// only to test loop related operations
 
 		LinkedList(int id);
+
+
+		// Removes loop from linked list
+		// Assumes loopnode to be one of the nodes of the loop as detected and returned by hasLoop
+
+		void removeLoop(Node* loopnode);
+
 };
 
 

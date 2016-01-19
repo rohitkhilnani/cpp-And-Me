@@ -304,7 +304,7 @@
 			Node *slow = head, *fast = head;
 
 			while(slow!=nullptr && fast!=nullptr && fast->getNext()!=nullptr){
-				
+
 				// move slow ahead by 1
 				slow = slow->getNext();
 
@@ -341,7 +341,7 @@
 		if(id == 1){
 
 			for(int i=1;i<=5;i++)
-				insertLast(1);
+				insertLast(i);
 
 			Node *ptr = head;
 
@@ -355,7 +355,7 @@
 	else if(id == 2){
 
 			for(int i=1;i<=5;i++)
-				insertLast(1);
+				insertLast(i);
 
 			Node *ptr = head;
 
@@ -371,7 +371,7 @@
 	else if(id == 3){
 
 			for(int i=1;i<=3;i++)
-				insertLast(1);
+				insertLast(i);
 
 			Node *ptr = head;
 
@@ -379,7 +379,7 @@
 				ptr = ptr->getNext();
 
 			for(int i=4;i<=7;i++)
-				insertLast(1);
+				insertLast(i);
 
 			Node *ptr2 = head;
 
@@ -391,4 +391,53 @@
 
 	}	
 
+	}
+
+
+	// Removes loop from linked list
+	// Assumes loopnode to be one of the nodes of the loop as detected and returned by hasLoop
+
+	void LinkedList::removeLoop(Node* loopnode){
+
+
+		// if loopnode is same as head (starting node of loop is head)
+		if(loopnode == head){
+
+			// traverse to last node
+			Node *ptr = head;
+
+			while(ptr->getNext()!=head)
+				ptr=ptr->getNext();
+
+			// set its next to null
+			ptr->setNext(nullptr);
+
+			// return
+			return;
+		}	
+
+
+		// Otherwise, ...
+
+		// obtain a pointer to save previous of ptr2 while traversing
+		Node *save = nullptr;
+
+		// obtain a pointer to head and loopnode
+		Node *ptr = head, *ptr2 = loopnode;
+
+		// move ptr and ptr2 forward by 1 until both are same
+		while(ptr!=ptr2){
+
+			// save ptr2
+			save = ptr2;
+
+			// move ptr1 and ptr2 ahead by 1
+			ptr = ptr->getNext();
+			ptr2 = ptr2->getNext();
+
+			
+		}
+
+		// save is the last node. set its next to null
+		save->setNext(nullptr);
 	}
