@@ -265,21 +265,130 @@
 
 		LinkedList::~LinkedList(){
 
-			// obtain two pointers
-			Node *prev = nullptr, *curr = head;
+		// to keep track of nodes deleted in case of loop in linked list. 
+		// break when number of deleted nodes = length of list	
+		int delCount = 0;	
 
-			// while current is not null
-			while(curr!=nullptr){
+		// obtain two pointers
+		Node *prev = nullptr, *curr = head;
 
-				// move prev to curr
-				prev = curr;
+		// while current is not null
+		while(curr!=nullptr && delCount < length){
 
-				// move curr to its next
-				curr = curr->getNext();
+			// move prev to curr
+			prev = curr;
 
-				// deallocate prev
-				delete prev;
-			}
+			// move curr to its next
+			curr = curr->getNext();
+
+			// deallocate prev
+			delete prev;
+			delCount++;
+		}
 
 
 		}
+
+	// Detects loop in linked list
+	// Returns pointer to common node in list
+
+		Node* LinkedList::hasLoop(){
+
+			// if list is empty, return nullptr
+			if(head == nullptr){
+				return nullptr;
+			}
+
+			// Get two pointers to head
+			// slow moves one node at a time and fast moves two nodes at a time	
+			Node *slow = head, *fast = head;
+
+			while(slow!=nullptr && fast!=nullptr && fast->getNext()!=nullptr){
+				
+				// move slow ahead by 1
+				slow = slow->getNext();
+
+				// move fast ahead by 2
+				fast = fast->getNext()->getNext();
+
+				// if slow == fast, loop exists. Return common node's pointer
+				if(slow == fast)
+					return slow;
+
+
+
+			}
+
+			// If loop breaks because of null pointer being encountered, loop does not exist. Return nullptr
+			return nullptr;
+
+		}		
+
+// Constructs linked list with default values
+
+	LinkedList::LinkedList(){
+
+	}
+
+
+	// Constructs linkedlist with loop based on loop id
+	// only to test loop related operations
+
+	LinkedList::LinkedList(int id){
+
+		// test linked list 1
+
+		if(id == 1){
+
+			for(int i=1;i<=5;i++)
+				insertLast(1);
+
+			Node *ptr = head;
+
+			while(ptr->getNext()!=nullptr)
+				ptr = ptr->getNext();
+
+			// create loop
+			ptr->setNext(head);
+
+		}
+	else if(id == 2){
+
+			for(int i=1;i<=5;i++)
+				insertLast(1);
+
+			Node *ptr = head;
+
+			while(ptr->getNext()!=nullptr)
+				ptr = ptr->getNext();
+
+			// create loop
+			ptr->setNext(ptr);
+
+
+	}
+
+	else if(id == 3){
+
+			for(int i=1;i<=3;i++)
+				insertLast(1);
+
+			Node *ptr = head;
+
+			while(ptr->getNext()!=nullptr)
+				ptr = ptr->getNext();
+
+			for(int i=4;i<=7;i++)
+				insertLast(1);
+
+			Node *ptr2 = head;
+
+			while(ptr2->getNext()!=nullptr)
+				ptr2 = ptr2->getNext();
+
+			// create loop
+			ptr2->setNext(ptr);
+
+	}	
+
+	}

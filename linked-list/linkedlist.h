@@ -19,6 +19,7 @@ class LinkedList{
 
 	public:
 	
+
 		// Displays linked list
 
 		void print();
@@ -69,6 +70,22 @@ class LinkedList{
 
 		~LinkedList();
 
+
+		// Detects loop in linked list
+		// Returns pointer to common node in list
+
+		Node* hasLoop();
+
+
+		// Constructs linked list with default values
+
+		LinkedList();
+
+
+		// Constructs linkedlist with loop based on loop id
+		// only to test loop related operations
+
+		LinkedList(int id);
 };
 
 
