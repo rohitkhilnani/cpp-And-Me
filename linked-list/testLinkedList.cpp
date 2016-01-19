@@ -277,6 +277,74 @@ void testHasLoop(){
 }
 
 
+//tests remove loop
+
+void testRemoveLoop(){
+
+	LinkedList l1(1);
+
+	Node * loopnode1 = l1.hasLoop();
+
+	if(loopnode1!=nullptr)
+		std::cout<<"\nl1 has loop";
+	else
+		std::cout<<"\nl1 does not have loop";
+
+	l1.removeLoop(loopnode1);
+
+	loopnode1 = l1.hasLoop();
+
+	if(loopnode1!=nullptr)
+		std::cout<<"\nl1 has loop";
+	else
+		std::cout<<"\nl1 does not have loop";
+
+	l1.print();
+
+
+	LinkedList l3(2);
+
+	Node * loopnode3 = l3.hasLoop();
+
+	if(loopnode3!=nullptr)
+		std::cout<<"\nl3 has loop";
+	else
+		std::cout<<"\nl3 does not have loop";
+
+	l3.removeLoop(loopnode3);
+
+	loopnode3 = l3.hasLoop();
+
+	if(loopnode3!=nullptr)
+		std::cout<<"\nl3 has loop";
+	else
+		std::cout<<"\nl3 does not have loop";
+	
+	l3.print();
+
+	
+	LinkedList l4(3);
+
+	Node *loopnode4 = l4.hasLoop();
+
+	if(loopnode4!=nullptr)
+		std::cout<<"\nl4 has loop";
+	else
+		std::cout<<"\nl4 does not have loop";
+
+	l4.removeLoop(loopnode4);
+
+	loopnode4 = l4.hasLoop();
+
+	if(loopnode4!=nullptr)
+		std::cout<<"\nl4 has loop";
+	else
+		std::cout<<"\nl4 does not have loop";	
+
+	l4.print();
+
+}
+
 int main(){
 
 	// test insert
@@ -296,6 +364,9 @@ int main(){
 
 	// test hasLoop
 	testHasLoop();
+
+	// test remove loop
+	testRemoveLoop();
 
 	return 0;
 }
