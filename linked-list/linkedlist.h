@@ -99,6 +99,17 @@ class LinkedList{
 		int findLength();
 
 
+		// Swaps kth node from beginning and end by exchanging pointers and without copying any data
+
+		void swapKth(int k);
+
+
+		// Add copy constructor
+
+		LinkedList(const LinkedList &ll);
+
+		
+
 };
 
 

@@ -477,3 +477,80 @@
 
 		return len;
 	}
+
+	// Swaps kth node from beginning and end by exchanging pointers and without copying any data
+
+	void LinkedList::swapKth(int k){
+
+		if(head == nullptr)
+			return;
+
+		// find length of list
+		int n = findLength();
+
+		// invalid k
+		if(k > n){
+			std::cout<<"Invalid k\n";
+			return;
+		}
+
+		// swapping a node with itself - no change
+		if(2*k == n + 1){
+			return;
+		}
+
+		// obtain four pointers
+		Node *prev1 = nullptr, *prev2 = nullptr , *curr1 = head, *curr2 = head;
+
+		// move curr1 ahead k-1 times (such that prev1 is just before curr1)
+		for(int i=0;i<k-1;i++){
+			prev1 = curr1;
+			curr1 = curr1->getNext();
+		}
+
+		// move curr2 ahead n-k times (such that prev2 is just before curr2)
+		for(int i=0;i<n-k;i++){
+			prev2 = curr2;
+			curr2 = curr2->getNext();	
+		}
+
+		// if prev1 is not null, point its next to curr2
+		if(prev1!=nullptr)
+			prev1->setNext(curr2);
+		else //  otherwise, set new head as curr2
+			head = curr2;
+
+		// if prev2 is not null, point its next to curr1		
+		if(prev2!=nullptr)
+			prev2->setNext(curr1);
+		else // otherwise, set new head as curr1
+			head = curr1;		
+
+
+		// swap next pointers of curr1 and curr2
+		Node *t = curr1->getNext();
+		curr1->setNext(curr2->getNext());
+		curr2->setNext(t);	
+
+	}
+		
+
+	// Add copy constructor
+
+	LinkedList::LinkedList(const LinkedList &ll){
+
+		// obtain pointer to first element of list to be copied
+		Node *ptr = ll.head;
+
+		// insert each element into new list until ptr null
+		while(ptr!=nullptr){
+
+			insertLast(ptr->getValue());
+
+			// move ptr ahead
+			ptr = ptr->getNext();
+
+		}
+
+
+	}
