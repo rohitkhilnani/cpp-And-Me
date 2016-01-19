@@ -141,8 +141,14 @@
 		// Handle deletion at beginning
 		if(i == 0){
 
+			// save head
+			Node *temp = head;
+
 			// Move head to next node
 			head = head->getNext();
+
+			// deallocate temp's memory
+			delete temp;
 		}
 		else {  // Handle other cases
 
@@ -153,9 +159,15 @@
 			for(int k = 0;k<(i-1);k++)
 				ptr = ptr->getNext();
 
+			// save pointer to ptr's next
+			Node *temp = ptr->getNext();
+
 			// point ptr's next to ptr's next's next
 			ptr->setNext(ptr->getNext()->getNext());			
 
+
+			// deallocate temp's memory
+			delete temp;
 
 		}
 
@@ -247,11 +259,27 @@
 
 
 
-
-
-
-
-
-
-
 	}
+
+	// Deallocate linked list
+
+		LinkedList::~LinkedList(){
+
+			// obtain two pointers
+			Node *prev = nullptr, *curr = head;
+
+			// while current is not null
+			while(curr!=nullptr){
+
+				// move prev to curr
+				prev = curr;
+
+				// move curr to its next
+				curr = curr->getNext();
+
+				// deallocate prev
+				delete prev;
+			}
+
+
+		}

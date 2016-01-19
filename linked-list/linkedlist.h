@@ -64,6 +64,11 @@ class LinkedList{
 
 		void pairwiseReverse();
 
+
+		// Deallocate linked list
+
+		~LinkedList();
+
 };
 
 
