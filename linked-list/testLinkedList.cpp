@@ -239,6 +239,44 @@ void testpairwiseReverse(){
 }
 
 
+// tests hasLoop
+
+void testHasLoop(){
+
+	LinkedList l1(1);
+
+	if(l1.hasLoop()!=nullptr)
+		std::cout<<"\nl1 has loop";
+	else
+		std::cout<<"\nl1 does not have loop";
+
+	LinkedList l2;
+	for(int i=1;i<=5;i++)
+		l2.insertLast(i);
+
+	if(l2.hasLoop()!=nullptr)
+		std::cout<<"\nl2 has loop";
+	else
+		std::cout<<"\nl2 does not have loop";
+
+
+	LinkedList l3(2);
+
+	if(l3.hasLoop()!=nullptr)
+		std::cout<<"\nl3 has loop";
+	else
+		std::cout<<"\nl3 does not have loop";
+
+
+	LinkedList l4(3);
+
+	if(l4.hasLoop()!=nullptr)
+		std::cout<<"\nl4 has loop";
+	else
+		std::cout<<"\nl4 does not have loop";
+}
+
+
 int main(){
 
 	// test insert
@@ -255,6 +293,9 @@ int main(){
 
 	// test pairwise reverse
 	testpairwiseReverse();
+
+	// test hasLoop
+	testHasLoop();
 
 	return 0;
 }
