@@ -1,24 +1,6 @@
-/*
-	This header defines linked list
-*/
+# Linked List  - Basic and advanced operations 
 
-#ifndef __LINKED_LIST__
-#define __LINKED_LIST__
-
-#include<iostream>
-#include<limits>
-#include "node.h" 		// My implementation of node
-
-class LinkedList{
-
-
-	private: 
-
-		Node* head = nullptr; 		// points to first node of linked list
-		int length = 0;				// number of nodes in linked list
-
-	public:
-	
+Methods/ Operations implemented: 
 
 		// Displays linked list
 		// Time Complexity: O(N) 	N - no. of nodes in linked list
@@ -121,12 +103,3 @@ class LinkedList{
 		// Add copy constructor
 
 		LinkedList(const LinkedList &ll);
-
-		
-
-};
-
-
-
-
-#endif

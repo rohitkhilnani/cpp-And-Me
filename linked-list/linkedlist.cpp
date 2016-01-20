@@ -4,7 +4,8 @@
 
 #include "linkedlist.h"
 
-// Displays linked list
+	// Displays linked list
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::print(){
 
@@ -25,7 +26,8 @@
 	}		
 
 
-// Inserts node with specified value 'value' at specified location 'i'
+	// Inserts node with specified value 'value' at specified location 'i'
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::insert_node(int i, int value){
 
@@ -74,6 +76,7 @@
 	}
 
 	// Inserts node with specified value 'value' at beginning
+	// Time Complexity: O(1)
 
 	void LinkedList::insertFirst(int value){
 		insert_node(0,value);
@@ -81,6 +84,7 @@
 
 
 	// Inserts node with specified value 'value' at end
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::insertLast(int value){
 		insert_node(length,value);
@@ -88,6 +92,7 @@
 
 
 	// Returns length of linked list
+	// Time Complexity: O(1)
 
 	int LinkedList::getLength(){
 
@@ -96,6 +101,7 @@
 
 	// Returns value at specified location in linked list
 	// returns numeric_limits<int>::min if index is invalid
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	int LinkedList::valueAt(int i){
 
@@ -120,6 +126,7 @@
 
 
 	// Deletes node at specified index i
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::delete_node(int i){
 
@@ -178,6 +185,7 @@
 
 
 	// Reverses linked list
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::reverse(){
 
@@ -214,6 +222,7 @@
 
 
 	// (Pair-wise) reverses linked list
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::pairwiseReverse(){
 
@@ -262,6 +271,7 @@
 	}
 
 	// Deallocate linked list
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 		LinkedList::~LinkedList(){
 
@@ -291,6 +301,7 @@
 
 	// Detects loop in linked list
 	// Returns pointer to common node in list
+	// Time Complexity: O(N) 	N - no. of nodes in linked list	
 
 		Node* LinkedList::hasLoop(){
 
@@ -324,7 +335,7 @@
 
 		}		
 
-// Constructs linked list with default values
+	// Constructs linked list with default values
 
 	LinkedList::LinkedList(){
 
@@ -396,6 +407,7 @@
 
 	// Removes loop from linked list
 	// Assumes loopnode to be one of the nodes of the loop as detected and returned by hasLoop
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::removeLoop(Node* loopnode){
 
@@ -443,6 +455,7 @@
 	}
 
 	// Finds length, assuming length is not available before hand
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	int LinkedList::findLength(){
 
@@ -479,6 +492,7 @@
 	}
 
 	// Swaps kth node from beginning and end by exchanging pointers and without copying any data
+	// Time Complexity: O(N) 	N - no. of nodes in linked list
 
 	void LinkedList::swapKth(int k){
 
