@@ -425,6 +425,80 @@ void testSwapKth(){
 }
 
 
+void testRemoveDuplicates(LinkedList l){
+
+	std::cout<<"Before: ";
+	l.print();
+	l.removeDuplicates();
+	std::cout<<"After: ";
+	l.print();
+	std::cout<<"\n";
+}
+
+
+// tests remove duplicates
+
+void testRemoveDuplicates(){
+
+	std::cout<<"Testing remove duplicates: \n";
+
+	LinkedList l1;
+	testRemoveDuplicates(l1);
+
+	l1.insertLast(5);
+	testRemoveDuplicates(l1);
+
+	
+	LinkedList l2;
+	
+	for(int i = 1;i<=5;i++)
+		l2.insertLast(i);
+	
+	for(int i = 1;i<=5;i++)
+		l2.insertLast(i);
+
+	for(int i = 6;i<=10;i++)
+		l2.insertLast(i);
+	
+	testRemoveDuplicates(l2);
+
+
+	LinkedList l3;
+
+	for(int i = 1;i<=15;i++)
+		l3.insertLast(2);
+
+	testRemoveDuplicates(l3);
+
+
+	LinkedList l4;
+	
+	for(int i=0;i<9;i++)
+		l4.insertLast(i);
+
+	testRemoveDuplicates(l4);
+
+
+	LinkedList l5;
+	
+	l5.insertLast(2);
+	l5.insertLast(2);
+	l5.insertLast(5);
+	l5.insertLast(8);
+	l5.insertLast(8);
+
+	testRemoveDuplicates(l5);
+
+
+	LinkedList l6;
+
+	for(int i = 0;i<5;i++)
+		for(int j=0;j<2;j++)
+			l6.insertLast(j);
+
+	testRemoveDuplicates(l6);	
+
+}
 
 
 
@@ -455,6 +529,9 @@ int main(){
 	testFindLength();	
 
 	testSwapKth();
+
+	// test remove duplicates
+	testRemoveDuplicates();
 
 	return 0;
 }
