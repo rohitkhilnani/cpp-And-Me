@@ -569,10 +569,11 @@
 
 	}
 
-	// Removes duplicate nodes from list
+	// Removes duplicate nodes from list (unsorted)
 	// Time Complexity: O(N)
 	// Space Complexity: O(N)		N - no. of nodes in linked list
 	// Preserves order of elements
+	
 	void LinkedList::removeDuplicates(){
 
 		// do nothing if list is empty or has just one node
