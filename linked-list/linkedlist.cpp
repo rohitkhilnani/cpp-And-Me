@@ -557,7 +557,7 @@
 		Node *ptr = ll.head;
 
 		// insert each element into new list until ptr null
-		while(ptr!=nullptr){
+		while(ptr!='\0'){
 
 			insertLast(ptr->getValue());
 
@@ -566,5 +566,55 @@
 
 		}
 
+
+	}
+
+	// Removes duplicate nodes from list
+	// Time Complexity: O(N)
+	// Space Complexity: O(N)		N - no. of nodes in linked list
+	// Preserves order of elements
+	void LinkedList::removeDuplicates(){
+
+		// do nothing if list is empty or has just one node
+		if(head == nullptr || head->getNext() == nullptr)
+			return;
+
+		// Obtain two pointers to Node
+		Node *prev = nullptr, *curr = head;
+
+		// define set of discovered nodes
+		std::unordered_set<int> keys;
+
+		// repeat until curr is null
+		while(curr!=nullptr){
+
+			// if current node's value is not in set keys
+			if(keys.find(curr->getValue()) == keys.end()){
+
+				// insert the value in keys
+				keys.insert(curr->getValue());
+
+				// move prev to curr
+				prev = curr;	
+
+				// move curr to next node
+				curr = curr->getNext();
+
+			}
+			else {  // if value is in keys (duplicate)
+
+				// set prev's next to curr's next
+				prev->setNext(curr->getNext());
+
+				// deallocate memory used by curr
+				delete curr;
+
+				// set curr as prev's next
+				curr = prev->getNext();	
+
+
+			}
+
+		}
 
 	}

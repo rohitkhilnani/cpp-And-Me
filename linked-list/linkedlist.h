@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<limits>
+#include<unordered_set>	
 #include "node.h" 		// My implementation of node
 
 class LinkedList{
@@ -121,6 +122,13 @@ class LinkedList{
 		// Add copy constructor
 
 		LinkedList(const LinkedList &ll);
+
+
+		// Removes duplicate nodes from list (unsorted)
+		// Time Complexity: O(N)
+		// Space Complexity: O(N)		N - no. of nodes in linked list
+		// Preserves order of elements
+		void removeDuplicates();
 
 		
 
