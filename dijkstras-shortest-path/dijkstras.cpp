@@ -47,6 +47,10 @@
 
 	/*
 	Finds shortest paths from source to all vertices
+	// Time complexity: O(E*V)	E- no. of edges, V - no. of Vertices
+	// NOTE: Original complexity is O(E*log(V)). There is increase in complexity because heapify has been called instead of 
+	// decrease key while updateing distance of vertex. STL does not support decrease key.
+
 	*/
 
 	void Dijkstras::find_paths(){
@@ -121,6 +125,8 @@
 
 	/*
 	Prints path from source to vertex named u
+	Time Complexity: O(V)
+	Space Complexity: O(V)
 	*/
 
 	void Dijkstras::print_path(int u){
@@ -143,6 +149,7 @@
 
 	/*
 	Returns length of paths from source to vertex named u
+	Time Complexity: O(1)
 	*/
 
 	int Dijkstras::get_length(int u){
