@@ -1,0 +1,46 @@
+# Dijkstra's Shortest Path Algorithm
+
+Class Dijkstras implements Dijkstras shortest path algorithm using adjacency list represntation of a directed graph
+
+Methods/ Operations implemented: 
+
+public:
+
+		/*  Constructs Dijkstras object
+			n - Number of vertices
+			m - Number of edges
+			edges - vector of vector of int (2D vector) of order m x 3 with each row representing an directed edge (u,v,w) between vertices u and v
+			of weight w.
+			s - source vertex
+
+		*/
+
+		Dijkstras(int n, int m, std::vector< std::vector<int> > edges, int s );
+
+
+		/*
+		Finds shortest paths from source to all vertices
+		*/
+
+		void find_paths();
+
+
+		/*
+		Prints path from source to vertex named u
+		*/
+
+		void print_path(int u);
+
+
+		/*
+		Returns length of paths from source to vertex named u
+		*/
+
+		int get_length(int u);
+
+
+		/*
+		Destructor
+		*/
+
+		~Dijkstras();
